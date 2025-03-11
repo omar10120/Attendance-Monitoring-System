@@ -60,7 +60,7 @@ export function Sidebar() {
       <div className="h-full flex flex-col">
         {/* Sidebar Header */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200 dark:border-gray-700">
-          {!isCollapsed && <span className="text-lg font-semibold text-gray-800 dark:text-white">{t.projectname.title}</span>}
+          {!isCollapsed && <span className="text-lg font-semibold text-gray-800 dark:text-white">{t.common.Leave_Requests}</span>}
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
             className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"

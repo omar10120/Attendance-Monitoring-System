@@ -1,8 +1,7 @@
 export interface UserProfile {
   id: string;
-  user_id: string;
-  full_name: string | null;
-  avatar_url: string | null;
+  full_name: string;
+  avatar_url?: string;
   role: 'EMPLOYEE' | 'MANAGER';
   department?: string | null;
   position?: string | null;
@@ -10,32 +9,39 @@ export interface UserProfile {
   bio?: string | null;
 }
 
-export interface AttendanceRecord {
-  id: string;
-  user_id: string;
-  check_in: Date;
-  check_out?: Date | null;
-  total_hours?: number | null;
-  status: string;
-}
-
-export interface LeaveRequest {
-  id: string;
-  user_id: string;
-  type: 'FULL_DAY' | 'HOURLY';
-  start_date: Date;
-  end_date: Date;
-  hours?: number;
-  reason: string;
-  status: 'PENDING' | 'APPROVED' | 'REJECTED';
-}
-
 export interface Task {
   id: string;
   title: string;
   description: string;
-  due_date: Date;
-  status: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+  status: 'TODO' | 'IN_PROGRESS' | 'DONE';
   priority: 'LOW' | 'MEDIUM' | 'HIGH';
+  assigned_to: string;
+  created_by: string;
+  expected_hours?: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Leave {
+  id: string;
   user_id: string;
+  start_date: string;
+  end_date: string;
+  reason: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Attendance {
+  id: string;
+  user_id: string;
+  check_in: string;
+  check_out?: string;
+  created_at: string;
+}
+
+export interface ApiError {
+  message: string;
+  status?: number;
 }

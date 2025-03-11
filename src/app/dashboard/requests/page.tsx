@@ -150,7 +150,7 @@ export default function RequestsPage() {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-6xl mx-auto"
       >
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">{t.title.leave_request_title}</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">{t.leaves.title}</h1>
 
         {/* Requests Table */}
         <div className="bg-white p-6 rounded-xl shadow-lg">

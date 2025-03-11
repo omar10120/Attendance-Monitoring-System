@@ -1,25 +1,28 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
-
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { supabase } from '@/lib/supabase';
 import { motion } from 'framer-motion';
 import { toast } from 'react-hot-toast';
+import { useLanguage } from '@/components/providers/LanguageProvider';
+import { translations } from '@/translations';
 
-export default function LoginPage() {
+function LoginForm() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { language } = useLanguage();
+  const t = translations[language];
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [recoveryEmail, setRecoveryEmail] = useState('');
-  const router = useRouter();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (searchParams?.get('registered')) {
@@ -33,18 +36,17 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) throw error;
 
-      if (data.user) {
-        router.push('/dashboard');
-      }
+      router.push('/dashboard');
     } catch (error: any) {
-      setError(error.message || 'Failed to login');
+      console.error('Error:', error.message);
+      setError(error.message || t.common.error);
     } finally {
       setIsLoading(false);
     }
@@ -78,7 +80,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -230,6 +232,16 @@ export default function LoginPage() {
           </div>
         </div>
       </motion.div>
+    </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <div className="min-h-screen">
+      <Suspense fallback={<div>Loading...</div>}>
+        <LoginForm />
+      </Suspense>
     </div>
   );
 }

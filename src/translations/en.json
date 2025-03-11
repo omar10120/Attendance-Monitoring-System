@@ -1,4 +1,5 @@
 {
+
   "common": {
     "dashboard": "Dashboard",
     "attendance": "Attendance",
@@ -7,7 +8,8 @@
     "settings": "Settings",
     "logout": "Logout",
     "success": "Success",
-    "error": "Error"
+    "error": "Error",
+    "Leave_Requests" : "leave request"
   },
   "settings": {
     "title": "Settings",
@@ -24,5 +26,27 @@
       "dark": "Dark",
       "system": "System"
     }
+  },
+  "attendance": {
+    "title": "Attendance",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "history": "Attendance History",
+    "checkedIn": "Successfully checked in!",
+    "checkedOut": "Successfully checked out!",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "date": "Date",
+    "time": "Time",
+    "status": "Status"
+  },
+  "leaves": {
+    "title": "Leave Requests",
+    "newRequest": "New Leave Request",
+    "type": "Leave Type",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "reason": "Reason",
+    "status": "Status"
   }
 }

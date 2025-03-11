@@ -1,4 +1,5 @@
 {
+
   "common": {
     "dashboard": "لوحة التحكم",
     "attendance": "الحضور",
@@ -7,7 +8,8 @@
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "success": "نجاح",
-    "error": "خطأ"
+    "error": "خطأ",
+    "Leave_Requests" : "طلب إجازة "
   },
   "settings": {
     "title": "الإعدادات",
@@ -24,5 +26,27 @@
       "dark": "داكن",
       "system": "النظام"
     }
+  },
+  "attendance": {
+    "title": "الحضور",
+    "checkIn": "تسجيل الدخول",
+    "checkOut": "تسجيل الخروج",
+    "history": "سجل الحضور",
+    "checkedIn": "تم تسجيل الدخول بنجاح!",
+    "checkedOut": "تم تسجيل الخروج بنجاح!",
+    "completed": "مكتمل",
+    "ongoing": "جاري",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "status": "الحالة"
+  },
+  "leaves": {
+    "title": "طلبات الإجازة",
+    "newRequest": "طلب إجازة جديد",
+    "type": "نوع الإجازة",
+    "startDate": "تاريخ البداية",
+    "endDate": "تاريخ النهاية",
+    "reason": "السبب",
+    "status": "الحالة"
   }
 }

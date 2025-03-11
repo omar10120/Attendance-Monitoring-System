@@ -283,7 +283,7 @@ export default function TasksPage() {
         className="max-w-6xl mx-auto"
       >
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">{t.title.tasks}</h1>
+          <h1 className="text-3xl font-bold text-gray-900">{t.common.Leave_Requests}</h1>
           {isManager && (
             <Button
               onClick={() => setShowTaskForm(true)}
