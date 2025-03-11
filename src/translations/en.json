@@ -1,0 +1,28 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "attendance": "Attendance",
+    "tasks": "Tasks",
+    "leaves": "Leaves",
+    "settings": "Settings",
+    "logout": "Logout",
+    "success": "Success",
+    "error": "Error"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "manageAccount": "Manage your account settings",
+    "language": "Language",
+    "profileSettings": "Profile Settings",
+    "fullName": "Full Name",
+    "email": "Email",
+    "role": "Role",
+    "updateProfile": "Update Profile",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "common": {
+    "dashboard": "لوحة التحكم",
+    "attendance": "الحضور",
+    "tasks": "المهام",
+    "leaves": "الإجازات",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "success": "نجاح",
+    "error": "خطأ"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "appearance": "المظهر",
+    "manageAccount": "إدارة إعدادات حسابك",
+    "language": "اللغة",
+    "profileSettings": "إعدادات الملف الشخصي",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "role": "الدور",
+    "updateProfile": "تحديث الملف الشخصي",
+    "theme": {
+      "light": "فاتح",
+      "dark": "داكن",
+      "system": "النظام"
+    }
+  }
+}
